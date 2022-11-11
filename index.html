@@ -13,28 +13,42 @@
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-sm-6 my-3">
-                <form action="">
-                    <div class="form-group">
-                        <h1>Quel Temps fait-il chez vous ?</h1>
-                        <input type="text" placeholder="Entrer votre Ville" class="form-control"  >
+            <div class="col-md-8">
+                <h1 class="textCenter mt-5"></h1>
+                <div class="textCenter ">
+                    <h3>Météo de : </h3>
+                    <span id="ville">Saint-Astier</span>
+
+                    <div id="meteo">
+                        <span id="weatherMain"></span>
+                        <span id="weatherIcone"></span>
+                        <span id="weatherDescp"></span>
                     </div>
-                    <button type="submit" class="btn btn-inf btn-block">Rechercher</button>
-                </form>
+                    <div id="temperature">
+                        <h3>Température</h3>
+                        <span id="temperatureLabel">
+                            xx.x
+                        </span> 
+                    </div>
+                    <div id="humidity">
+                        <h3>Taux d'humidité </h3>
+                        <span id="humidityLabel">
+                            xx
+                        </span>
+                    </div>
+                    <div id="wind">
+                        <h3>Vitesse du vent </h3>
+                        <span id="windLabel">
+
+                        </span>
+                    </div>
+                </div>    
             </div>
-            <div class="col-12 col-sm-6 d-flex justify-content-center my-3">
-                <div class="box-container">
-                    <div id="city" class="box">
-
-                    </div>
-                    <div id="temperature" class="box">
-
-                    </div>
-                    <div id="humidity" class="box">
-
-                    </div>
-                    <div id="wind" class="box">
-                    </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div id="changer" class="mt-2 text-center p-3 text-white font-weight-bold text-uppercase">
+                    Changer de Ville
                 </div>
             </div>
         </div>
