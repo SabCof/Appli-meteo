@@ -1,0 +1,55 @@
+body {
+    background-image: url(/assets/img/pexels-agung-kurn-11018913.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-family: 'Lobster', cursive;;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    margin:0 0 1rem 5rem;
+    
+}
+.btn {
+    margin-bottom: 1rem;
+}
+.box-container {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    
+    flex-wrap: wrap;
+}
+.box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+}
+#city {
+    background-color:rgb(14, 165, 233, 0.90);
+}
+#temp {
+    background-color: rgb(59, 130, 246, 0.90);
+}
+#humidity {
+    background-color:rgb(99, 102, 241, 0.90);
+}
+#wind {
+    background-color: rgb(139, 92, 246, 0.90);
+}

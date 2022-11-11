@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Weather App en JavaScript</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-6 my-3">
+                <form action="">
+                    <div class="form-group">
+                        <h1>Quel Temps fait-il chez vous ?</h1>
+                        <input type="text" placeholder="Entrer votre Ville" class="form-control"  >
+                    </div>
+                    <button type="submit" class="btn btn-inf btn-block">Rechercher</button>
+                </form>
+            </div>
+            <div class="col-12 col-sm-6 d-flex justify-content-center my-3">
+                <div class="box-container">
+                    <div id="city" class="box">
+
+                    </div>
+                    <div id="temperature" class="box">
+
+                    </div>
+                    <div id="humidity" class="box">
+
+                    </div>
+                    <div id="wind" class="box">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/script.js"></script>
+</body>
+</html>
