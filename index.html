@@ -14,44 +14,40 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h1 class="textCenter mt-5"></h1>
+                <h1 class="textCenter mt-5">Météo</h1>
                 <div class="textCenter ">
-                    <h3>Météo de : </h3>
-                    <span id="ville">Saint-Astier</span>
+                    <input type="text" placeholder="saisissez une ville..." id="searchCity">
+                    <input type="button" value="search" id="searchBtn">
+                    
 
                     <div id="meteo">
+                        <span id="city"></span>
                         <span id="weatherMain"></span>
                         <span id="weatherIcone"></span>
-                        <span id="weatherDescp"></span>
+                        <span id="weatherDesc"></span>
                     </div>
                     <div id="temperature">
-                        <h3>Température</h3>
-                        <span id="temperatureLabel">
+                        <img src="assets/img/icons8-thermomètre-48.png" alt="température" >
+                        <span id="tempLabel">
                             xx.x
                         </span> 
                     </div>
                     <div id="humidity">
-                        <h3>Taux d'humidité </h3>
-                        <span id="humidityLabel">
-                            xx
+                        <img src="assets/img/icons8-humide-48.png" alt="humidity" >
+                        <span id="humiLabel">
+                             xx
                         </span>
                     </div>
                     <div id="wind">
-                        <h3>Vitesse du vent </h3>
+                        <img src="assets/img/icons8-vent-48.png" alt="humidity" >
                         <span id="windLabel">
-
+                            
                         </span>
                     </div>
                 </div>    
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div id="changer" class="mt-2 text-center p-3 text-white font-weight-bold text-uppercase">
-                    Changer de Ville
-                </div>
-            </div>
-        </div>
+       
     </div>
     <script src="/assets/script.js"></script>
 </body>

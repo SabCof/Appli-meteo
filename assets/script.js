@@ -1,73 +1,43 @@
-let ville = 'Saint-Astier';
-// Elements
-const city = document.querySelector('#ville');
+// Elements manipulation du DOM
+const searchCity = document.querySelector('#searchCity');
+const searchBtn = document.querySelector('#searchBtn');
+
+const citys = document.querySelector('#city');
 const main = document.querySelector('#weatherMain');
-const icons = document.querySelector('#weatherIcone');
-const description = document.querySelector('#weatherDescp');
-const temperature = document.querySelector("#temperatureLabel");
-const humidity = document.querySelector("#humidityLabel");
+const icons = document.querySelector("#weatherIcone");
+const description = document.querySelector("#weatherDesc");
+const temperature = document.querySelector("#tempLabel");
+const humidity = document.querySelector("#humiLabel");
 const wind = document.querySelector("#windLabel");
+
 const appid = '3ad0baf152741088efafc8b1ce9fbaf8';
-const btnCity = document.querySelector("#changer");
+
+
+
+//API infos
+
+
+
 
 //Afficher à l'entrée de la page la météo d'une ville par défault, ici St Astier
 // Pour ça on appelle la fonction recevoirMeteo();
 
-recevoirMeteo(ville);
-function recevoirMeteo(city) {
-   
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=fr&units=metric&appid=${appid}`;
-    const imgSrc = `http://openweathermap.org/img/wn/${icons}@2x.png`;
-
-    fetch(url)
-        .then((response) => 
-            response.json()
-            .then((data) => {
+searchBtn.addEventListener('click', () =>{
+    if(searchCity.value === ""){
+        alert('Veuillez entrer une ville !!')
+    }else{
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&lang=fr&units=metric&appid=${appid}`)
+            .then((response) => response.json())// Formattage
+            .then((response) => {
+                console.log(response)
+                citys.innerHTML = response.name;
+                main.innerHTML = response.weather[0].main;
+                description.innerHTML = response.weather[0].description;
                 
-                ville = data.name;
-                main.innerHTML = data.weather[0].main;
-                icons.innerHTML = data.weather[0].icon;
-                let img = document.createElement('img');
-                img.src.innerHTML = imgSrc;
-                description.innerHTML = data.weather[0].description;
-                temperature.innerHTML =  data.main.temp + '°C';
-                humidity.innerHTML =  data.main.humidity + '%';
-                wind.innerHTML =  data.wind.speed + 'km/h';
-     
-            })    
-        ); 
-}
-
-btnCity.addEventListener('click', () =>{
-    let villeChoisie = ville ;
-    villeChoisie = prompt('Quelle ville souhaitez-vous choisir ?');
-    recevoirMeteo(villeChoisie);
-})
-
-     
-     
-     
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-        
-     
-   
-
-
+                temperature.innerHTML = Math.ceil( response.main.temp) + '°C';
+                humidity.innerHTML =  response.main.humidity + '%';
+                wind.innerHTML = Math.ceil(response.wind.speed)  + 'km/h';
+            }) //Affichage
+    };                
+               
+});
